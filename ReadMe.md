@@ -1,0 +1,5 @@
+This is a Discord bot written in Python that responds to reactions added to messages in a Discord channel. It uses the Discord API and the Giphy API to search for and send GIFs based on the emoji that was used to react to the message.
+
+The on_raw_reaction_add() event handler is called every time a reaction is added to a message. The payload contains information about the reaction and the message, such as the message ID, the channel ID, and the emoji used to react. The bot uses this information to search for and send a GIF using the Giphy API. The search query and the rating for the GIFs are set based on the emoji used to react to the message.
+
+The bot uses the giphy_client library to make requests to the Giphy API. It creates a DefaultApi object and uses its gifs_search_get() method to search for GIFs with a specific query and rating. It then selects a random GIF from the search results and sends it to the Discord channel using the send() method of the TextChannel object.
